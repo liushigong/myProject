@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.page.demo.dao.CityMapper">
+
+    <select resultType="com.page.demo.entity.City" parameterType="com.page.utils.pagination.Page" id="findPage">
+      SELECT * FROM city where 1=1
+        <!--<if test="params.code != '' and params.code != null">
+            AND code like concat('%', #{params.code},'%')
+        </if>-->
+        <if test="obj.code != '' and obj.code != null">
+            AND code like concat('%', #{obj.code},'%')
+        </if>
+    </select>
+</mapper> 
